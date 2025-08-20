@@ -13,8 +13,16 @@
   --dark-gray: #2c2c2c;
 }
 
+/* Dark theme for HTML root */
+html {
+  background-color: var(--dark-gray);
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
+  background-color: var(--dark-gray);
+  color: white;
 }
 
 /* Animated Gradient Background for Hero */
@@ -45,9 +53,7 @@ body {
 }
 
 /* Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-}
+/* Already included in html selector above */
 
 /* Enhanced backdrop blur support */
 @supports (backdrop-filter: blur(10px)) {
