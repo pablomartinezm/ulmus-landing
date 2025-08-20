@@ -1,0 +1,75 @@
+/* Font Configuration */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for the Hero Section */
+:root {
+  --violet-mist: #c77dff;
+  --canopy-blue: #3c91e6;
+  --lime-spark: #87f20d;
+  --dark-gray: #2c2c2c;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Animated Gradient Background for Hero */
+.animated-gradient {
+  background-image: radial-gradient(
+    circle at center,
+    var(--violet-mist),
+    var(--canopy-blue)
+  );
+  background-size: 200% 200%;
+  animation: gradient-animation 15s ease infinite;
+  filter: blur(80px) opacity(0.15);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Selection Colors */
+::selection {
+  background-color: var(--lime-spark);
+  color: var(--dark-gray);
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced backdrop blur support */
+@supports (backdrop-filter: blur(10px)) {
+  .backdrop-blur-lg {
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lime-spark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7ae008;
+}
